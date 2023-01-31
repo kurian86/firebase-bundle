@@ -40,6 +40,7 @@ class FirebaseExtension extends Extension
 
     private function processProjectConfiguration(string $name, array $config, ContainerBuilder $container): void
     {
+        $this->registerService($name, 'app_check', $config, Firebase\Contract\AppCheck::class, $container, 'createAppCheck');
         $this->registerService($name, 'database', $config, Firebase\Contract\Database::class, $container, 'createDatabase');
         $this->registerService($name, 'auth', $config, Firebase\Contract\Auth::class, $container, 'createAuth');
         $this->registerService($name, 'storage', $config, Firebase\Contract\Storage::class, $container, 'createStorage');

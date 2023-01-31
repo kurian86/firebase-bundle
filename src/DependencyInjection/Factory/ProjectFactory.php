@@ -98,6 +98,11 @@ class ProjectFactory
         return $factory;
     }
 
+    public function createAppCheck(array $config = []): Firebase\Contract\AppCheck
+    {
+        return $this->createFactory($config)->createAppCheck();
+    }
+
     public function createDatabase(array $config = []): Firebase\Contract\Database
     {
         return $this->createFactory($config)->createDatabase();
